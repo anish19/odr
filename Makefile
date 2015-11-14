@@ -4,7 +4,7 @@ LIBS =  /home/courses/cse533/Stevens/unpv13e/libunp.a
 
 FLAGS = -g -O2 -I/home/courses/cse533/Stevens/unpv13e/lib
 
-all: client server odr prhwaddrs
+all: client server prhwaddrs odr
 
 
 prhwaddrs: prhwaddrs.o get_hw_addrs.o
@@ -16,7 +16,7 @@ client: client.o
 server: server.o
 	${CC} -g -o $@ server.o ${LIBS}
 
-odr: odr.o
+odr: odr.o get_hw_addrs.o
 	${CC} -g -o $@ odr.o ${LIBS}
 
 

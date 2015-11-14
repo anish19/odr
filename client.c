@@ -99,7 +99,6 @@ int main(){
 	sockfd = Socket(AF_LOCAL, SOCK_DGRAM, 0);
 	client_un.sun_family = AF_LOCAL;
 	strcpy(client_un.sun_path, CLI_UN_PATH);
-//	printf("client sun path is %s\n", client_un.sun_path);
 
 	ret = mkstemp(client_un.sun_path);
 	if(ret == -1){
