@@ -17,7 +17,7 @@ server: server.o
 	${CC} -g -o $@ server.o ${LIBS}
 
 odr: odr.o get_hw_addrs.o
-	${CC} -g -o $@ odr.o ${LIBS}
+	${CC} -g -o $@ odr.o get_hw_addrs.o ${LIBS}
 
 
 get_hw_addrs.o: get_hw_addrs.c

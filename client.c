@@ -119,6 +119,7 @@ int main(){
 		printf("Unable to communicate over unix socket at client\n");
 		goto err;
 	}
+	printf("unix socket at which msg sent is %d\n", sockfd);
 	printf("msg sent from client at al is %s\n", server_addr_str);
 
 
