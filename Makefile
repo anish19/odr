@@ -4,36 +4,36 @@ LIBS =  /home/courses/cse533/Stevens/unpv13e/libunp.a
 
 FLAGS = -g -O2 -I/home/courses/cse533/Stevens/unpv13e/lib
 
-all: client server prhwaddrs odr
+all: client_aa19 server_aa19 prhwaddrs_aa19 odr_aa19
 
 
-prhwaddrs: prhwaddrs.o get_hw_addrs.o
-	${CC} -g -o prhwaddrs prhwaddrs.o get_hw_addrs.o ${LIBS}
+prhwaddrs_aa19: prhwaddrs_aa19.o get_hw_addrs_aa19.o
+	${CC} -g -o prhwaddrs_aa19 prhwaddrs_aa19.o get_hw_addrs_aa19.o ${LIBS}
 
-client: client.o 
-	${CC} -g -o $@ client.o ${LIBS}
+client_aa19: client_aa19.o 
+	${CC} -g -o $@ client_aa19.o ${LIBS}
 
-server: server.o
-	${CC} -g -o $@ server.o ${LIBS}
+server_aa19: server_aa19.o
+	${CC} -g -o $@ server_aa19.o ${LIBS}
 
-odr: odr.o get_hw_addrs.o
-	${CC} -g -o $@ odr.o get_hw_addrs.o ${LIBS}
+odr_aa19: odr_aa19.o get_hw_addrs_aa19.o
+	${CC} -g -o $@ odr_aa19.o get_hw_addrs_aa19.o ${LIBS}
 
 
-get_hw_addrs.o: get_hw_addrs.c
-	${CC} ${FLAGS} -c get_hw_addrs.c
+get_hw_addrs_aa19.o: get_hw_addrs_aa19.c
+	${CC} ${FLAGS} -c get_hw_addrs_aa19.c
 
-prhwaddrs.o: prhwaddrs.c
-	${CC} ${FLAGS} -c prhwaddrs.c
+prhwaddrs_aa19.o: prhwaddrs_aa19.c
+	${CC} ${FLAGS} -c prhwaddrs_aa19.c
 
-client.o: client.c
-	${CC} ${FLAGS} -c client.c
+client_aa19.o: client_aa19.c common.h
+	${CC} ${FLAGS} -c client_aa19.c
 
-server.o: server.c
-	${CC} ${FLAGS} -c server.c
+server_aa19.o: server_aa19.c
+	${CC} ${FLAGS} -c server_aa19.c
 
-odr.o: odr.c 
-	${CC} ${FLAGS} -c odr.c 
+odr_aa19.o: odr_aa19.c 
+	${CC} ${FLAGS} -c odr_aa19.c 
 
 clean:
-	rm *.o client server odr prhwaddrs
+	rm *.o client_aa19 server_aa19 odr_aa19 prhwaddrs_aa19
