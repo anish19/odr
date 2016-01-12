@@ -1,6 +1,0 @@
-- Client reads server name from command line.
-- Client gets server addr(cannonical Server IP) using gethostbyname
-- Client binds itself to a Unix Socket to talk to odr at link layer
-- CLient binds to CLI_UN_PATH
-- At the client node, odr listens to client at SRV_UN_PATH unix socket
-- odr recieves the server addr
